@@ -24,6 +24,113 @@ html, body {
   color: var(--taupe-text);
   scroll-behavior: smooth;
 }
+/* ========== PRODUCT TIERS SECTION ========== */
+/* ========== PRODUCT TIERS SECTION ========== */
+.product-tiers-section {
+  padding: 5rem 2rem;
+  background: var(--cream-bg);
+  font-family: 'Marcellus', serif;
+}
+
+.tiers-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tiers-header h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--mocha-dark);
+  letter-spacing: 1px;
+}
+
+.tiers-header p {
+  color: var(--taupe-text);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.product-tier-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .product-tier-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tier-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  min-height: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tier-card:hover {
+  transform: scale(1.025);
+}
+
+.card-overlay {
+  background: rgba(10, 8, 6, 0.555); /* dark glass */
+  backdrop-filter: blur(6px);
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.card-overlay h3 {
+  font-size: 1.8rem;
+  color: #ffe08a;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.card-overlay .emoji {
+  font-size: 1.5rem;
+  margin-right: 0.4rem;
+}
+
+.card-overlay .tagline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fcd9b8;
+  margin-bottom: 0.8rem;
+}
+
+.card-overlay .description {
+  font-size: 0.95rem;
+  color: #f3f3f3;
+  margin-bottom: 1rem;
+}
+
+.card-overlay ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  color: #fdf6e3;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+
+
+
+.tier-card:hover {
+  transform: scale(1.03);
+}
+
 
 /* ========== NAVBAR ========== */
 .navbar {
@@ -471,6 +578,210 @@ section {
   background-size: cover;
   background-position: center;
   order: 1;
+}
+/* === General Page Styles === */
+/* === MAIN CONTAINER === */
+/* === LIGHTING PRODUCTS MAIN CONTAINER === */
+.lighting-products-container {
+  padding: 4rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+}
+
+/* === HEADER === */
+.lighting-header h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.lighting-header p {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+/* === SECTION HEADERS === */
+.lighting-products-container h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #222;
+  margin-bottom: 2rem;
+}
+
+/* === CHROMA GRID SECTION === */
+.chroma-grid-wrapper {
+  height: 600px;
+  position: relative;
+  margin-bottom: 6rem;
+}
+
+/* === WHY CHOOSE SECTION === */
+.lighting-why {
+  background: #f9f9f9;
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  margin: 6rem 0;
+}
+
+.lighting-why h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+/* === GALLERY SECTION === */
+.lighting-gallery {
+  margin-top: 6rem;
+}
+
+.lighting-gallery h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+/* === CALL TO ACTION SECTION === */
+.lighting-cta {
+  background-color: #fff8e1;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 0rem;
+  border-radius: 12px;
+  margin-top: 6rem;
+}
+
+.lighting-cta h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.lighting-cta .cta-button {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background-color: #f59e0b;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.lighting-cta .cta-button:hover {
+  background-color: #d97706;
+}
+
+.lighting-cta p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.lighting-cta a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.lighting-cta a:hover {
+  text-decoration: underline;
+}
+
+/* === FOOTER === */
+.footer-container {
+  margin-top: 10rem;
+}
+
+.cta-button {
+  background-color: #ffc107;
+  padding: 0.8rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e0a800;
+}
+
+.lighting-cta p {
+  margin-top: 1rem;
+  color: #444;
+}
+
+/* === RESPONSIVE FIXES === */
+@media (max-width: 768px) {
+  .lighting-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .lighting-section h2,
+  .lighting-why h2 {
+    font-size: 1.8rem;
+  }
+
+  .lighting-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Masonry.css */
+
+/* Container for the grid */
+.list {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Wrapper around each image item */
+.item-wrapper {
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  z-index: 1;
+}
+
+/* Image container with background image */
+.item-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Optional hover overlay (used only if colorShiftOnHover is enabled) */
+.color-overlay {
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+/* Optional: responsive fallback if JS fails */
+@media screen and (max-width: 600px) {
+  .item-wrapper {
+    width: 100% !important;
+    position: relative !important;
+    margin-bottom: 16px;
+  }
 }
 
 .product-content,

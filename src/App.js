@@ -7,6 +7,7 @@ import ContactUs from './pages/ContactUs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import LightingProducts from './pages/Products/LightingProducts';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<ProductHome />} />
+        <Route path="/Lightings" element={<LightingProducts />} />
       </Routes>
     </div>
   );
