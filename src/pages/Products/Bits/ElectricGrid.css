@@ -1,0 +1,9 @@
+.electric-grid {
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: brightness(1.2) saturate(1.2);
+}

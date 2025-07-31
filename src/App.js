@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import LightingProducts from './pages/Products/LightingProducts';
+import SmartElectricals from './pages/Products/SmartElectricals';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<ProductHome />} />
         <Route path="/Lightings" element={<LightingProducts />} />
+        <Route path="/smart-electricals" element={<SmartElectricals />} />
       </Routes>
     </div>
   );

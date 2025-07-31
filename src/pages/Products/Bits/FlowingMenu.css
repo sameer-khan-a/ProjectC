@@ -17,7 +17,7 @@
   position: relative;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 -1px #fff;
+  box-shadow: 0 -1px #050404;
 }
 
 .menu__item-link {
@@ -31,7 +31,7 @@
   text-decoration: none;
   white-space: nowrap;
   font-weight: 600;
-  color: #fff;
+  color: gray;
   font-size: 4vh;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .menu__item-link:focus:not(:focus-visible) {
-  color: #fff;
+  color: gray;
 }
 
 .marquee {
