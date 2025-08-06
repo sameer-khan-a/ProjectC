@@ -1278,10 +1278,8 @@ section h2 {
   color: #4b5563;
 }
 
-/* ===== CTA SECTION ===== */
 .smart-cta {
-  background-color: #00d1b2;
-  color: #fff;
+  color: var(--sand);
   text-align: center;
   padding: 60px 20px;
 }
@@ -1289,20 +1287,27 @@ section h2 {
 .smart-cta h2 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: var(--gold-accent);
 }
 
 .smart-cta p {
   font-size: 1rem;
   margin-bottom: 20px;
+  color: var(--sand);
 }
 
 .smart-cta .btn-primary {
-  background: #fff;
-  color: #00b89c;
+  background: var(--gold-accent);
+  color: var(--mocha-dark);
   border: none;
+  cursor: pointer;
+  padding: 12px 28px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .smart-cta .btn-primary:hover {
-  background: #f1f5f9;
-  color: #00b89c;
+  background: var(--sand);
+  color: var(--mocha-text);
 }

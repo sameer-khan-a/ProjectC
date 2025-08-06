@@ -4,16 +4,43 @@ import Footer from '../../components/Footer';
 import InfiniteMenu from './Bits/InfiniteMenu';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import TargetCursor from './Bits/TargetCursor';
 import ElectricGrid from './Bits/ElectricGrid'; // Ensure this path is correct
 import '../../main.css';
 import Hyperspeed from './Bits/HyperSpeed'; // Ensure this path is correct
+import SpotlightCard from './Bits/SpotlightCard';
 import CircularGallery from './Bits/CircularGallery';
 const SmartElectricals = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
+    const steps = [
+    {
+      title: 'Choose your smart plan',
+      img: 'https://picsum.photos/300/200?random=1',
+    },
+    {
+      title: 'Customize with app, voice or sensors',
+      img: 'https://picsum.photos/300/200?random=2',
+    },
+    {
+      title: 'Installation by Nixbeezs experts',
+      img: 'https://picsum.photos/300/200?random=3',
+    },
+    {
+      title: 'Enjoy comfort, security & savings',
+      img: 'https://picsum.photos/300/200?random=4',
+    },
+  ];
 
+  const compatibilities = [
+    { name: 'Alexa', img: 'https://picsum.photos/100/100?random=5' },
+    { name: 'Google Assistant', img: 'https://picsum.photos/100/100?random=6' },
+    { name: 'Zigbee', img: 'https://picsum.photos/100/100?random=7' },
+    { name: 'WiFi', img: 'https://picsum.photos/100/100?random=8' },
+    { name: 'KNX', img: 'https://picsum.photos/100/100?random=9' },
+  ];
 const items = [
   {
     image: 'https://picsum.photos/id/1005/500/300', // Represents Smart Switch
@@ -246,52 +273,108 @@ const smartItems = [
 
 
 
-      {/* 🔳 Section 3: How It Works / Use Cases */}
-      <section className="smart-usecases" data-aos="fade-up">
-        <div className="container">
-          <h2>How It Works</h2>
-          <div className="usecase-steps">
-            {[
-              'Choose your smart plan',
-              'Customize with app, voice or sensors',
-              'Installation by Nixbeezs experts',
-              'Enjoy comfort, security & savings',
-            ].map((step, idx) => (
-              <div key={idx} className="usecase-step">
-                <span>{idx + 1}</span>
-                <p>{step}</p>
+     (
+    <div>
+      {/* 🔹 Custom Cursor */}
+      <TargetCursor spinDuration={2} hideDefaultCursor={true} />
+
+      {/* 🔹 Full-Screen Smart Section */}
+      <div 
+        className="smart-section"
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          padding: '40px 20px',
+        }}
+        data-aos="fade-up"
+      >
+        {/* 🔹 Hero */}
+        <div className="hero" style={{ maxWidth: '800px', marginBottom: '50px' }}>
+          <h1 className="cursor-target">Smart Living Made Easy</h1>
+          <p style={{ fontSize: '18px', color: '#555', marginTop: '15px' }}>
+            Experience seamless automation, ultimate comfort, and secure living with Nixbeezs smart solutions.
+          </p>
+        </div>
+
+        {/* 🔹 How It Works Steps */}
+        <div className="usecase-steps" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '50px' }}>
+          {steps.map((step, idx) => (
+            <div 
+              key={idx} 
+              className="usecase-step cursor-target"
+              style={{ width: '200px', textAlign: 'center' }}
+            >
+              <img 
+                src={step.img} 
+                alt={step.title} 
+                style={{ width: '100%', borderRadius: '10px', marginBottom: '10px' }}
+              />
+              <span style={{ fontWeight: 'bold', fontSize: '20px' }}>{idx + 1}</span>
+              <p style={{ marginTop: '5px' }}>{step.title}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* 🔹 Compatibility Icons */}
+        <div className="smart-compatibility">
+          <p style={{ marginBottom: '20px', fontSize: '16px', color: '#666' }}>
+            Seamlessly integrates with your favorite platforms & protocols.
+          </p>
+          <div className="compatibility-icons" style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}>
+            {compatibilities.map((item, idx) => (
+              <div 
+                key={idx} 
+                className="compatibility-item cursor-target"
+                style={{ textAlign: 'center' }}
+              >
+                <img 
+                  src={item.img} 
+                  alt={item.name} 
+                  style={{ width: '80px', height: '80px', borderRadius: '50%', marginBottom: '10px' }}
+                />
+                <span>{item.name}</span>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* 🔳 Section 4: Compatibility & Ecosystem */}
-      <section className="smart-compatibility" data-aos="fade-up">
-        <div className="container">
-          <h2>Wide Compatibility</h2>
-          <p>Seamlessly integrates with your favorite platforms & protocols.</p>
-          <div className="compatibility-icons">
-            {[
-              'Alexa', 'Google Assistant', 'Zigbee', 'WiFi', 'KNX'
-            ].map((label, idx) => (
-              <div key={idx} className="compatibility-item">
-                <img src={`/logos/${label.toLowerCase().replace(/\s/g, '')}.png`} alt={label} />
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      </div>
+    </div>
       {/* 📍 Bottom CTA */}
-      <section className="smart-cta" data-aos="fade-up">
-        <div className="container">
-          <h2>Ready to Get Smart?</h2>
-          <p>Book a free site visit or talk to a specialist today.</p>
-          <button className="btn-primary">Schedule Now</button>
-        </div>
-      </section>
+          <section className="smart-cta" data-aos="fade-up" style={{ padding: '80px 20px', textAlign: 'center' }}>
+      <div className="container" style={{ maxWidth: '600px', margin: '0 auto' }}>
+        <SpotlightCard 
+          className="custom-spotlight-card" 
+          spotlightColor="#f8f5f27e"
+          style={{ padding: '50px 30px', borderRadius: '20px' }}
+        >
+          <h2 style={{ marginBottom: '15px' }}>Ready to Get Smart?</h2>
+          <p style={{ fontSize: '18px', marginBottom: '25px' }}>
+            Book a free site visit or talk to a specialist today.
+          </p>
+          <button 
+            className="btn-primary cursor-target"
+            style={{
+              padding: '12px 30px',
+              borderRadius: '8px',
+              border: 'none',
+              color: 'var(--mocha-text)',
+              fontWeight: 'bold',
+              fontSize: '16px',
+              cursor: 'pointer',
+              transition: '0.3s',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            Schedule Now
+          </button>
+        </SpotlightCard>
+      </div>
+    </section>
 
       <Footer />
     </>
