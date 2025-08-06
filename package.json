@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.7",
+    "gl-matrix": "^3.4.3",
     "gsap": "^3.13.0",
     "ogl": "^1.0.11",
     "postprocessing": "^6.37.6",

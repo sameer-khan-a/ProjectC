@@ -1,16 +1,77 @@
 import React, { useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import InfiniteMenu from './Bits/InfiniteMenu';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ElectricGrid from './Bits/ElectricGrid'; // Ensure this path is correct
 import '../../main.css';
 import Hyperspeed from './Bits/HyperSpeed'; // Ensure this path is correct
-
+import CircularGallery from './Bits/CircularGallery';
 const SmartElectricals = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+
+const items = [
+  {
+    image: 'https://picsum.photos/id/1005/500/300', // Represents Smart Switch
+    link: '#',
+    title: 'Smart Switches',
+    description: 'Control your lights and appliances remotely using app or voice.'
+  },
+  {
+    image: 'https://picsum.photos/id/1018/500/300', // Represents WiFi Sensors
+    link: '#',
+    title: 'WiFi Sensors',
+    description: 'PIR, door, gas, smoke sensors for home safety and automation.'
+  },
+  {
+    image: 'https://picsum.photos/id/1027/500/300', // Represents Voice Assistant
+    link: '#',
+    title: 'Voice Control',
+    description: 'Compatible with Alexa and Google Assistant.'
+  },
+  {
+    image: 'https://picsum.photos/id/1033/500/300', // Represents Smart Locks
+    link: '#',
+    title: 'Smart Door Locks',
+    description: 'Secure access with fingerprint, app, or passcode options.'
+  }
+];
+const smartItems = [
+  {
+    image: '/smart/switch.jpg',
+    title: 'NixTouch Switch Panel',
+    description: 'Ideal for living rooms',
+  },
+  {
+    image: '/smart/ir.jpg',
+    title: 'WiFi IR Blaster',
+    description: 'Control your AC, TV, etc.',
+  },
+  {
+    image: '/smart/lock.jpg',
+    title: 'Smart Door Lock',
+    description: 'Secure & stylish',
+  },
+  {
+    image: '/smart/plug.jpg',
+    title: 'Energy Monitor Plug',
+    description: 'Track and save energy',
+  },
+  {
+    image: '/smart/sensor.jpg',
+    title: 'Motion Sensor',
+    description: 'Auto lighting & safety',
+  },
+  {
+    image: '/smart/cam.jpg',
+    title: 'Smart Camera',
+    description: 'Monitor your home in HD',
+  },
+];
 
   return (
     <>
@@ -81,45 +142,109 @@ const SmartElectricals = () => {
 
 
       {/* 🔳 Section 1: Core Smart Solutions */}
-      <section className="smart-solutions" data-aos="fade-up">
-        <div className="container">
-          <h2>Core Smart Solutions</h2>
-          <div className="solutions-grid">
-            {[
-              { name: 'Smart Switches', desc: 'Control your lights from anywhere, anytime.' },
-              { name: 'Sensors', desc: 'Motion, smoke & door sensors for enhanced safety.' },
-              { name: 'Smart Locks', desc: 'Keyless entry, real-time access control.' },
-              { name: 'Voice & App Control', desc: 'Alexa, Google, or mobile – your choice.' },
-            ].map((item, idx) => (
-              <div key={idx} className="solution-card">
-                <h3>{item.name}</h3>
-                <p>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
+
+
+      <section className="smart-solutions" data-aos="fade-up" style={{ padding: '4rem 2rem' }}>
+  <div className="container" style={{ maxWidth: '100vw', margin: '0 auto' }}>
+    <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+      <h2 style={{
+        fontSize: '2.8rem',
+        fontWeight: '800',
+        color: 'var(--mocha-text)',
+        marginBottom: '1rem',
+        textShadow: '1px 1px 5px rgba(0, 0, 0, 0.6)'
+      }}>
+        Core Smart Solutions
+      </h2>
+      <p style={{
+        fontSize: '1.25rem',
+        color: 'var(--gold-accent)',
+        maxWidth: '700px',
+        margin: '0 auto',
+        lineHeight: '1.6',
+        textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)'
+      }}>
+        Discover our intelligent product lineup – designed to elevate modern living with seamless control, security, and style.
+      </p>
+    </div>
+
+
+      <InfiniteMenu items={items} />
+
+  </div>
+</section>
+
+  
+
 
       {/* 🔳 Section 2: Top Smart Devices */}
-      <section className="smart-devices" data-aos="fade-up">
-        <div className="container">
-          <h2>Featured Smart Devices</h2>
-          <div className="devices-grid">
-            {[
-              { title: 'NixTouch Switch Panel', tip: 'Ideal for living rooms', img: '/smart/switch.jpg' },
-              { title: 'WiFi IR Blaster', tip: 'Control your AC, TV, etc.', img: '/smart/ir.jpg' },
-              { title: 'Smart Door Lock', tip: 'Secure & stylish', img: '/smart/lock.jpg' },
-              { title: 'Energy Monitor Plug', tip: 'Track and save energy', img: '/smart/plug.jpg' },
-            ].map((device, idx) => (
-              <div key={idx} className="device-card">
-                <img src={device.img} alt={device.title} />
-                <h3>{device.title}</h3>
-                <p>{device.tip}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+<section
+  className="smart-showcase"
+  data-aos="fade-up"
+  style={{
+    padding: '0rem 1.25rem',
+    minHeight: '45vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    borderRadius: '1.25rem',
+    position: 'relative',
+    overflow: 'hidden',
+  }}
+>
+  <div
+    className="container"
+    style={{
+      width: '100%',
+      maxWidth: '1000px',
+      margin: '0 auto',
+      textAlign: 'center',
+    }}
+  >
+    {/* Section Title */}
+    <h2
+      style={{
+        fontSize: '3rem',
+        fontWeight: '700',
+        color: '#5c463c', // Taupe
+        marginBottom: '0.5rem',
+        textShadow: '1px 1px 4px rgba(0,0,0,0.3)',
+        letterSpacing: '0.4px',
+      }}
+    >
+      Explore Our Smart Ecosystem
+    </h2>
+
+    {/* Section Description */}
+    <p
+      style={{
+        fontSize: '0.97rem',
+        color: '#d4af7f', // GoldAccent
+        maxWidth: '640px',
+        margin: '0 auto 0rem',
+        lineHeight: '1.5',
+        textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
+      }}
+    >
+      Seamlessly connect your devices with our cutting-edge smart technologies—
+      crafted for comfort, efficiency, and a touch of brilliance in everyday living.
+    </p>
+  </div>
+
+  {/* Circular Gallery */}
+  <div style={{ height: '720px', position: 'relative' }}>
+    <CircularGallery
+      bend={2}
+      textColor="#ffffff"
+      borderRadius={0.05}
+      scrollEase={0.02}
+    />
+  </div>
+</section>
+
+
+
 
       {/* 🔳 Section 3: How It Works / Use Cases */}
       <section className="smart-usecases" data-aos="fade-up">
