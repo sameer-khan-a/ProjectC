@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section className="hero-container">
       <video autoPlay muted loop playsInline className="hero-video">
-        <source src="/assets/videos/iot.mp4" type="video/mp4" />
+        <source src="/assets/videos/IOT.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
