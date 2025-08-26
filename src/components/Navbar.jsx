@@ -59,19 +59,19 @@ const Navbar = () => {
               <Link className="nav-link" to="/smart-electricals" onClick={closeMenu}>Smart Electricals</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/electrical-range" onClick={closeMenu}>Electrical Range</Link>
+              <Link className="nav-link" to="/ElectricalRange" onClick={closeMenu}>Electrical Range</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/lightings" onClick={closeMenu}>Lightings</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/home-automation" onClick={closeMenu}>Home Automation</Link>
+              <Link className="nav-link" to="/HomeAutomation" onClick={closeMenu}>Home Automation</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/solar-products" onClick={closeMenu}>Solar Products</Link>
+              <Link className="nav-link" to="/SolarProducts" onClick={closeMenu}>Solar Products</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact" onClick={closeMenu}>Contact Us</Link>
+              <Link className="nav-link" to="/ContactUs" onClick={closeMenu}>Contact Us</Link>
             </li>
           </ul>
         </div>

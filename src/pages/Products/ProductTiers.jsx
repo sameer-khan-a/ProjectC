@@ -1,4 +1,32 @@
 import React from 'react';
+import FlowingMenu from './Bits/FlowingMenu'; // ✅ Ensure correct path
+
+const whyNixbeezsItems = [
+  { 
+    icon: '🌱', 
+    title: 'Sustainable', 
+    text: 'Eco-conscious solutions designed for efficiency and long-term impact.',
+    image: '/assets/images/WhyTiers1.png'
+  },
+  { 
+    icon: '⚙️', 
+    title: 'Reliable', 
+    text: 'Products engineered with durability, backed by solid warranties.',
+    image: '/assets/images/WhyTiers2.png'
+  },
+  { 
+    icon: '💎', 
+    title: 'Premium Design', 
+    text: 'Where aesthetics meet functionality for modern homes & businesses.',
+    image: '/assets/images/WhyTiers3.png'
+  },
+  { 
+    icon: '🏛️', 
+    title: 'Bespoke Service', 
+    text: 'Custom solutions with lifetime support and design consultancy.',
+    image: '/assets/images/WhyTiers4.png'
+  },
+];
 
 const productTiers = [
   {
@@ -86,6 +114,13 @@ const NixbeezsProductTiers = () => {
           </div>
         ))}
       </div>
+      
+          <section className="why-nixbeezs py-5" id="why-nixbeezs">
+            <h2 className="text-center fw-bold mb-4">✨ Why Choose NIXBEEZS?</h2>
+            <div style={{ height: '600px', position: 'relative' }}>
+              <FlowingMenu items={whyNixbeezsItems} />
+            </div>
+          </section>
     </section>
   );
 };

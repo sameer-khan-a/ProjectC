@@ -1,7 +1,8 @@
 import React from 'react';
 import { ReactTyped } from 'react-typed';
-
+import { useNavigate } from "react-router-dom";
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero-container">
       <video autoPlay muted loop playsInline className="hero-video">
@@ -55,7 +56,9 @@ const HeroSection = () => {
             Innovative, intelligent, and inclusive solutions across lighting, automation, and sustainable tech.
           </p>
 
-          <button>Explore Our Solutions</button>
+            <button onClick={() => navigate("/Products")}>
+      Explore Our Solutions
+    </button>
         </div>
       </div>
     </section>

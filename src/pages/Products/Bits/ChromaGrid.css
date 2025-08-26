@@ -81,13 +81,7 @@
   transition: background 0.3s ease;
 }
 
-.chroma-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
+
 
 .chroma-info {
   position: relative;
@@ -165,4 +159,13 @@
 
   opacity: 1;
   transition: opacity 0.25s ease;
+}
+.chroma-grid-wrapper img {
+  
+  width: 200px;          /* lock width */
+  height: auto;          /* let height grow naturally */
+  max-height: 300px;     /* optional cap so it doesn’t stretch too tall */
+  object-fit: cover;   /* ensures the whole product shows */
+  display: block;
+  margin: 0 auto;
 }

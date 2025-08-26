@@ -13,7 +13,7 @@ const lightingCategories = [
     label: 'Indoor',
     items: [
       {
-        image: 'https://picsum.photos/seed/downlight/250/125',
+        image: '/assets/images/downlight.png',
         title: 'Downlight',
         subtitle: 'Compact, glare-free',
         handle: '@downlight',
@@ -22,7 +22,7 @@ const lightingCategories = [
         gradient: 'linear-gradient(145deg, #3B82F6, #000)',
       },
       {
-        image: 'https://picsum.photos/seed/tracklight/250/125',
+        image: '/assets/images/track.png',
         title: 'Track Light',
         subtitle: 'Adjustable for galleries',
         handle: '@tracklight',
@@ -31,7 +31,7 @@ const lightingCategories = [
         gradient: 'linear-gradient(145deg, #F59E0B, #000)',
       },
       {
-        image: 'https://picsum.photos/seed/striplight/250/125',
+        image: '/assets/images/strip.png',
         title: 'Strip Light',
         subtitle: 'Flexible LED cove lighting',
         handle: '@striplight',
@@ -40,7 +40,7 @@ const lightingCategories = [
         gradient: 'linear-gradient(145deg, #10B981, #000)',
       },
       {
-        image: 'https://picsum.photos/seed/pendantlight/250/125',
+        image: '/assets/images/pendant.png',
         title: 'Pendant Light',
         subtitle: 'Elegant centerpiece',
         handle: '@pendantlight',
@@ -55,7 +55,7 @@ const lightingCategories = [
     label: 'Outdoor',
     items: [
       {
-        image: 'https://picsum.photos/seed/bollard/600/600',
+        image: '/assets/images/bollard.png',
         title: 'Bollard Light',
         subtitle: 'Pathway illumination',
         handle: '@bollard',
@@ -64,7 +64,7 @@ const lightingCategories = [
         gradient: 'linear-gradient(145deg, #EF4444, #000)',
       },
       {
-        image: 'https://picsum.photos/seed/floodlight/600/600',
+        image: '/assets/images/flood.png',
         title: 'Flood Light',
         subtitle: 'High-intensity outdoor lighting',
         handle: '@floodlight',
@@ -79,7 +79,7 @@ const lightingCategories = [
     label: 'Signature',
     items: [
       {
-        image: 'https://picsum.photos/seed/aura/600/600',
+        image: '/assets/images/aura.png',
         title: 'AURA Series',
         subtitle: 'Ultra-premium smart fixtures',
         handle: '@aura',
@@ -88,7 +88,7 @@ const lightingCategories = [
         gradient: 'linear-gradient(145deg, #F43F5E, #000)',
       },
       {
-        image: 'https://picsum.photos/seed/panel2/600/600',
+        image: '/assets/images/mm.png',
         title: '2.0 Panel',
         subtitle: '25 mm ultra-thin technology',
         handle: '@panel2',
@@ -114,10 +114,10 @@ const galleryItems = [
 ];
 
 const whyChooseItems = [
-  { link: '#', text: 'Certified Excellence', image: 'https://picsum.photos/seed/certified/600/400' },
-  { link: '#', text: 'Smart Integration', image: 'https://picsum.photos/seed/smart/600/400' },
-  { link: '#', text: 'Tailored Offerings', image: 'https://picsum.photos/seed/tailored/600/400' },
-  { link: '#', text: 'Nationwide Support', image: 'https://picsum.photos/seed/nationwide/600/400' },
+  { link: '#', text: 'Certified Excellence', image: '/assets/images/excellence.png' },
+  { link: '#', text: 'Smart Integration', image: '/assets/images/integrate.png' },
+  { link: '#', text: 'Tailored Offerings', image: '/assets/images/smarthome.png' },
+  { link: '#', text: 'Nationwide Support', image: '/assets/images/nation.png' },
 ];
 
 const LightingProducts = () => (
@@ -183,7 +183,7 @@ const LightingProducts = () => (
           padding: '0 1rem',
         }}
       >
-        <h1 className="display-4 fw-bold">Intelligent. Aesthetic. Scalable.</h1>
+        <h1 className="display-4 fw-bold" style={{color: 'var(--gold-accent)'}}>Intelligent. Aesthetic. Scalable.</h1>
         <p className="lead mt-3 mb-4" style={{ maxWidth: '600px' }}>
           Discover the future of lighting and automation through Nixbeezs’ signature product lines.
         </p>
@@ -192,7 +192,7 @@ const LightingProducts = () => (
           <a
             href="#lighting-products"
             style={{
-              backgroundColor: 'white',
+              backgroundColor: 'var(--gold-accent)',
               color: 'black',
               padding: '0.6rem 1.5rem',
               borderRadius: '50px',
@@ -217,7 +217,7 @@ const LightingProducts = () => (
           <a
             href="#our-work"
             style={{
-              backgroundColor: 'white',
+              backgroundColor: 'var(--gold-accent)',
               color: 'black',
               padding: '0.6rem 1.5rem',
               borderRadius: '50px',

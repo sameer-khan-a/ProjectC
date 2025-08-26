@@ -31,8 +31,8 @@ function createTextTexture(gl, text, font = "bold 30px monospace", color = "blac
   const metrics = context.measureText(text);
   const textWidth = Math.ceil(metrics.width);
   const textHeight = Math.ceil(parseInt(font, 10) * 1.2);
-  canvas.width = textWidth + 20;
-  canvas.height = textHeight + 20;
+  canvas.width = textWidth + 10;
+  canvas.height = textHeight + 50;
   context.font = font;
   context.fillStyle = color;
   context.textBaseline = "middle";
@@ -268,8 +268,9 @@ class Media {
       }
     }
     this.scale = this.screen.height / 1000;
-    this.plane.scale.y = (this.viewport.height * (600 * this.scale)) / this.screen.height;
-    this.plane.scale.x = (this.viewport.width * (400 * this.scale)) / this.screen.width;
+    this.plane.scale.y = (this.viewport.height * (500 * this.scale)) / this.screen.height;
+this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width; // doubled width
+
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
     this.padding = 2;
     this.width = this.plane.scale.x + this.padding;
@@ -328,27 +329,27 @@ class App {
   createMedias(items, bend = 1, textColor, borderRadius, font) {
   const defaultItems = [
   {
-    image: `https://picsum.photos/seed/1/600/400?grayscale`,
+    image: `/assets/images/SmartP1.png`,
     text: 'NixTouch Switch Panel',
   },
   {
-    image: `https://picsum.photos/seed/2/600/400?grayscale`,
+    image: `/assets/images/SmartP3.png`,
     text: 'WiFi IR Blaster',
   },
   {
-    image: `https://picsum.photos/seed/3/600/400?grayscale`,
+    image: `/assets/images/SmartP2.jpg`,
     text: 'Smart Door Lock',
   },
   {
-    image: `https://picsum.photos/seed/4/600/400?grayscale`,
+    image: `/assets/images/SmartP7.png`,
     text: 'Energy Monitor Plug',
   },
   {
-    image: `https://picsum.photos/seed/5/600/400?grayscale`,
+    image: `/assets/images/SmartP5.png`,
     text: 'Motion Sensor',
   },
   {
-    image: `https://picsum.photos/seed/6/600/400?grayscale`,
+    image: `/assets/images/SmartP6.png`,
     text: 'Smart Camera',
   },
 ];
