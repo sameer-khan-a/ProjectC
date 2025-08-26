@@ -15,27 +15,27 @@ const products = [
   {
     title: 'Home Automation',
     desc: 'Smart switches, sensors, app and voice control systems designed for next-gen living and energy efficiency.',
-    img: '/assets/images/product2.jpg',
+    img: '/assets/images/Product2.jpg',
   },
   {
     title: 'Commercial Automation',
     desc: 'Lighting controls, HVAC automation, surveillance, and energy management for smart commercial environments.',
-    img: '/assets/images/product3.jpg',
+    img: '/assets/images/Product3.jpg',
   },
   {
     title: 'Solar Lighting',
     desc: 'Sustainable and hybrid lighting options including solar garden lights, motion-sensor and street lighting systems.',
-    img: '/assets/images/product4.jpg',
+    img: '/assets/images/Product4.jpg',
   },
   {
     title: 'Research & Development',
-    desc: 'In-house product design, firmware development, control systems, and UX research pushing the envelope of innovation.',
-    img: '/assets/images/product5.jpg',
+    desc: 'In-house Product design, firmware development, control systems, and UX research pushing the envelope of innovation.',
+    img: '/assets/images/Product5.jpg',
   },
   {
     title: 'End-to-End Services',
     desc: 'From site survey and custom planning to installation, commissioning, and post-sale AMC support.',
-    img: '/assets/images/product6.png',
+    img: '/assets/images/Product6.png',
   },
 ];
 

@@ -1142,7 +1142,7 @@ footer.footer {
 .smart-hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: var(--gold);
+  color: var(--gold-accent);
 }
 
 .smart-hero p {
