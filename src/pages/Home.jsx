@@ -1,6 +1,6 @@
 // pages/Home.jsx
 import React, { useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import NavbarHome from '../components/NavbarHome';
 import HeroSection from '../pages/HeroSection';
 import AboutUs from '../pages/AboutUs';
 import Products from './Products';
@@ -17,24 +17,55 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarHome />
+
+      {/* Main Scrollable Container */}
       <div className="home-scroll-container">
-        <section id="hero">
-          <HeroSection />
+        {/* Hero Section */}
+        <section id="hero" >
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <HeroSection />
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="about">
-          <AboutUs />
+        {/* About Us */}
+        <section id="about" className="py-5 bg-light">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <AboutUs />
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="products">
-          <Products />
+        {/* Products */}
+        <section id="products" className="py-5">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <Products />
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="contact">
-          <ContactUs />
+        {/* Contact */}
+        <section id="contact" className="py-5 bg-light">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <ContactUs />
+              </div>
+            </div>
+          </div>
         </section>
       </div>
+
       <Footer />
     </>
   );

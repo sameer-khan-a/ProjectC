@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import "./../main.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -53,77 +54,100 @@ export default function ContactForm() {
   return (
     <>
       <Navbar />
-      <section className="contact-us-container" style={{background: "transparent"}}>
-  {/* 🔹 Background Video */}
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="contact-bg-video"
-  >
-    <source src="/assets/videos/contact-us.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+      <section className="position-relative" >
+        {/* 🔹 Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-100 h-100 position-absolute top-0 start-0 object-fit-cover"
+        >
+          <source src="/assets/videos/contact-us.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
-  {/* 🔹 Foreground Content */}
-  <div className="contact-us-card" style={{background: "transparent"}}>
-    <h2 className="contact-us-title">📩 Contact Us</h2>
-    <p className="contact-us-subtitle">
-      Have questions? We’d love to hear from you. Fill out the form below!
-    </p>
-    <form onSubmit={handleSubmit} className="contact-us-form">
-      <div className="contact-us-field">
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="contact-us-field">
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="your@email.com"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="contact-us-field">
-        <label>Subject</label>
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          value={formData.subject}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div className="contact-us-field">
-        <label>Message</label>
-        <textarea
-          name="message"
-          placeholder="Write your message..."
-          value={formData.message}
-          onChange={handleChange}
-          rows="5"
-          required
-        />
-      </div>
-      <button type="submit" className="contact-us-btn w-50" disabled={isSending}>
-        {isSending ? "Sending..." : "Send Message"}
-      </button>
-    </form>
-  </div>
-</section>
+        {/* 🔹 Foreground Content */}
+        <div className="container position-relative py-5">
+          <div className="row justify-content-center">
+            <div className="col-lg-7 col-md-9">
+              <div className="card shadow-lg border-0 rounded-4 p-4 " style={{backgroundColor: "var(--taupe-text)"}}>
+                <h2 className="text-center mb-3">📩 Contact Us</h2>
+                <p className="text-center text-muted mb-4">
+                  Have questions? We’d love to hear from you. Fill out the form below!
+                </p>
 
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-3">
+                    <label className="form-label fw-semibold">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label className="form-label fw-semibold">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label className="form-label fw-semibold">Subject</label>
+                    <input
+                      type="text"
+                      name="subject"
+                      className="form-control"
+                      placeholder="Subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label className="form-label fw-semibold">Message</label>
+                    <textarea
+                      name="message"
+                      className="form-control"
+                      placeholder="Write your message..."
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows="5"
+                      required
+                    />
+                  </div>
+
+                  <div className="text-center">
+                    <button
+                      type="submit"
+                      style={{background: "var(--mocha-dark)", color: 'white'}}
+                      className="btn px-5 py-2 rounded-pill"
+                      disabled={isSending}
+                    >
+                      {isSending ? "Sending..." : "Send Message"}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+       <Footer />
     </>
   );
 }

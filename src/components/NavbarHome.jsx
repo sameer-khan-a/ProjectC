@@ -1,11 +1,11 @@
-// Navbar.jsx
+// NavbarHome.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import "../main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-const Navbar = () => {
+const NavbarHome = () => {
   // Close navbar after clicking a nav link
   const handleNavLinkClick = () => {
     const navbar = document.getElementById("navbarNav");
@@ -49,9 +49,24 @@ const Navbar = () => {
         {/* Collapsible Menu */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto nav-links">
-            {/* Home (normal link now) */}
-            <li className="nav-item">
-              <Link className="nav-link" to="/" onClick={handleNavLinkClick}>Home</Link>
+            {/* Home dropdown with hover */}
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Home
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-item" href="#hero" onClick={handleNavLinkClick}>Hero</a></li>
+                <li><a className="dropdown-item" href="#about" onClick={handleNavLinkClick}>About</a></li>
+                <li><a className="dropdown-item" href="#products" onClick={handleNavLinkClick}>Products</a></li>
+                <li><a className="dropdown-item" href="#contact" onClick={handleNavLinkClick}>Contact</a></li>
+              </ul>
             </li>
 
             {/* Other Links */}
@@ -83,4 +98,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarHome;

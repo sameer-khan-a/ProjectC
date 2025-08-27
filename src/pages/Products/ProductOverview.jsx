@@ -40,7 +40,7 @@ const ProductOverview = () => {
   return (
     <>
       {/* Product Hero Section */}
-      <section className="product-hero-container position-relative" id="product-overview">
+      <section className="product-hero-container" id="product-overview" style={{height: "100vh"}}>
         {/* Background Image */}
         <div
           className="product-hero-bg"
@@ -53,7 +53,7 @@ const ProductOverview = () => {
         ></div>
 
         {/* Overlay Content */}
-        <div className="product-hero-overlay position-relative" style={{ zIndex: 2 }}>
+        <div className="product-hero-overlay" style={{ zIndex: 2 }}>
           <div className="product-hero-content text-center" data-aos="zoom-in">
             <h1 className="display-4 fw-bold product-heading">
               Intelligent. Aesthetic. Scalable.

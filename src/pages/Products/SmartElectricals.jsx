@@ -4,9 +4,9 @@ import Footer from '../../components/Footer';
 import InfiniteMenu from './Bits/InfiniteMenu';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ElectricGrid from './Bits/ElectricGrid'; // Ensure this path is correct
+import ElectricGrid from './Bits/ElectricGrid';
 import '../../main.css';
-import Hyperspeed from './Bits/HyperSpeed'; // Ensure this path is correct
+import Hyperspeed from './Bits/HyperSpeed';
 import SpotlightCard from './Bits/SpotlightCard';
 import CircularGallery from './Bits/CircularGallery';
 
@@ -69,7 +69,7 @@ const SmartElectricals = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="smart-hero" data-aos="fade-up" >
+      <section className="smart-hero" data-aos="fade-up">
         <div className="hyperspeed-wrapper">
           <Hyperspeed
             effectOptions={{
@@ -226,9 +226,9 @@ const SmartElectricals = () => {
         }}
         data-aos="fade-up"
       >
-        <div className="hero" style={{ maxWidth: '800px', marginBottom: '50px' }}>
-          <h1>Smart Living Made Easy</h1>
-          <p style={{ fontSize: '18px', color: '#555', marginTop: '15px' }}>
+        <div className="hero" style={{ maxWidth: '90%', margin: '0 auto 3rem', textAlign: 'center' }}>
+          <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>Smart Living Made Easy</h1>
+          <p style={{ fontSize: 'clamp(14px, 2vw, 18px)', color: '#555', marginTop: '1rem' }}>
             Experience seamless automation, ultimate comfort, and secure living with Nixbeezs smart solutions.
           </p>
         </div>
@@ -237,84 +237,95 @@ const SmartElectricals = () => {
           className="usecase-steps"
           style={{
             display: 'flex',
-            gap: '20px',
+            gap: '2vw',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            marginBottom: '50px',
+            marginBottom: '3rem',
           }}
         >
           {steps.map((step, idx) => (
-            <div key={idx} className="usecase-step" style={{ width: '200px', textAlign: 'center' }}>
-              <img src={step.img} alt={step.title} style={{ width: '12vw',height:'23vh', borderRadius: '50%', marginBottom: '10px' }} />
-              <br /><span style={{ fontWeight: 'bold', fontSize: '20px' }}>{idx + 1}</span>
-              <p style={{ marginTop: '5px' }}>{step.title}</p>
+            <div key={idx} className="usecase-step" style={{ width: 'calc(50% - 2vw)', maxWidth: '220px', textAlign: 'center' }}>
+              <img
+                src={step.img}
+                alt={step.title}
+                style={{
+                  width: '60%',
+                  maxWidth: '160px',
+                  height: 'auto',
+                  aspectRatio: '1/1',
+                  borderRadius: '50%',
+                  marginBottom: '10px',
+                }}
+              />
+              <br />
+              <span style={{ fontWeight: 'bold', fontSize: 'clamp(18px, 3vw, 20px)' }}>{idx + 1}</span>
+              <p style={{ marginTop: '5px', fontSize: 'clamp(14px, 2vw, 16px)' }}>{step.title}</p>
             </div>
           ))}
         </div>
 
-        <div className="smart-compatibility">
-          <p style={{ marginBottom: '20px', fontSize: '16px', color: '#666' }}>
+        <div className="smart-compatibility" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <p style={{ marginBottom: '1.5rem', fontSize: 'clamp(14px, 2vw, 16px)', color: '#666' }}>
             Seamlessly integrates with your favorite platforms & protocols.
           </p>
           <div
             className="compatibility-icons"
-            style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}
+            style={{ display: 'flex', justifyContent: 'center', gap: '2vw', flexWrap: 'wrap' }}
           >
             {compatibilities.map((item, idx) => (
-              <div key={idx} className="compatibility-item" style={{ textAlign: 'center' }}>
+              <div key={idx} className="compatibility-item" style={{ textAlign: 'center', width: '80px' }}>
                 <img
                   src={item.img}
                   alt={item.name}
-                  style={{
-                    width: '80px',
-                    height: '80px',
-                    borderRadius: '0%',
-                    marginBottom: '10px',
-                  }}
+                  style={{ width: '100%', height: 'auto', borderRadius: '0%', marginBottom: '10px' }}
                 />
-                <span>{item.name}</span>
+                <span style={{ fontSize: 'clamp(12px, 1.5vw, 14px)' }}>{item.name}</span>
               </div>
             ))}
           </div>
         </div>
-      </div>
 
-      {/* CTA */}
-      <section id="cta" className="smart-cta" data-aos="fade-up" style={{ padding: '80px 20px', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <SpotlightCard
-            className="custom-spotlight-card"
-            spotlightColor="#f8f5f27e"
-            style={{ padding: '50px 30px', borderRadius: '20px' }}
-          >
-            <h2 style={{ marginBottom: '15px' }}>Ready to Get Smart?</h2>
-            <p style={{ fontSize: '18px', marginBottom: '25px' }}>
-              Book a free site visit or talk to a specialist today.
-            </p>
-            <button
-              className="btn-primary"
-              style={{
-                padding: '12px 30px',
-                borderRadius: '8px',
-                border: 'none',
-                color: 'var(--mocha-text)',
-                fontWeight: 'bold',
-                fontSize: '16px',
-                cursor: 'pointer',
-                transition: '0.3s',
-              }}
-              onClick={() => window.location.href = '/ContactUs'}
-
-              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+        {/* CTA */}
+        <section
+          id="cta"
+          className="smart-cta"
+          data-aos="fade-up"
+          style={{ padding: '5rem 2rem', textAlign: 'center' }}
+        >
+          <div className="container" style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <SpotlightCard
+              className="custom-spotlight-card"
+              spotlightColor="#f8f5f27e"
+              style={{ padding: '3rem 2rem', borderRadius: '20px' }}
             >
-              Schedule Now
-            </button>
-          </SpotlightCard>
-        </div>
-      </section>
+              <h2 style={{ marginBottom: '1rem', fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>Ready to Get Smart?</h2>
+              <p style={{ fontSize: 'clamp(14px, 2vw, 18px)', marginBottom: '2rem' }}>
+                Book a free site visit or talk to a specialist today.
+              </p>
+              <button
+                className="btn-primary"
+                style={{
+                  padding: '12px 30px',
+                  borderRadius: '8px',
+                  border: 'none',
+                  color: 'var(--mocha-text)',
+                  fontWeight: 'bold',
+                  fontSize: 'clamp(14px, 2vw, 16px)',
+                  cursor: 'pointer',
+                  transition: '0.3s',
+                }}
+                onClick={() => (window.location.href = '/ContactUs')}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+              >
+                Schedule Now
+              </button>
+            </SpotlightCard>
+          </div>
+        </section>
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 };

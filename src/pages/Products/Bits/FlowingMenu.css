@@ -18,6 +18,7 @@
   overflow: hidden;
   text-align: center;
   box-shadow: 0 -1px #050404;
+  min-height: 80px; /* ensures clickable area on small screens */
 }
 
 .menu__item-link {
@@ -30,9 +31,9 @@
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  font-weight: 600;
+  font-weight: 500;
   color: gray;
-  font-size: 4vh;
+  font-size: 2vw; /* responsive font size */
 }
 
 .menu__item-link:hover {
@@ -78,22 +79,34 @@
   white-space: nowrap;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 4vh;
+  font-size: 3vw; /* responsive font size */
   line-height: 1.2;
-  padding: 1vh 1vw 0;
+  padding: 0.5vh 1vw;
 }
 
 .marquee__img {
-  width: 200px;
-  height: 7vh;
-  margin: 2em 2vw;
-  padding: 1em 0;
-  border-radius: 50px;
+  width: 30vw;            /* bigger relative width */
+  max-width: 300px;       /* larger max on desktops */
+  min-width: 100px;       /* ensures it’s not too small on mobiles */
+  height: auto;
+  aspect-ratio: 1 / 1;    /* keeps it square */
+  margin: 1em 2vw;
+  padding: 0.5em 0;
+  border-radius: 50%;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: center;
 }
 
-.menu__item-link:hover+.marquee {
+/* Extra responsiveness for very small screens */
+@media (max-width: 480px) {
+  .marquee__img {
+    width: 60vw;          /* larger relative to viewport on mobiles */
+    margin: 0.5em 1vw;
+  }
+}
+
+
+.menu__item-link:hover + .marquee {
   transform: translate3d(0, 0%, 0);
 }
 
@@ -101,8 +114,21 @@
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
+  .menu__item-link {
+    font-size: 4vw;
+  }
+  .marquee span {
+    font-size: 4vw;
+  }
+  .marquee__img {
+    width: 30vw;
+    margin: 1em 1vw;
   }
 }

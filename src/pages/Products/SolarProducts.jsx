@@ -193,7 +193,7 @@ const SolarProducts = () => (
 
     <div className="solar-products-container" id="solar-products">
       {solarCategories.map(({ id, label, items }) => (
-        <section key={id} style={{ marginBottom: '6rem' }}>
+        <section key={id} style={{ marginBottom: '10rem' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '2rem',marginTop: '2rem', color: 'var(--gold-accent)'}}>{label}</h2>
           <div className="chroma-grid-wrapper">
             <ChromaGrid
@@ -207,14 +207,14 @@ const SolarProducts = () => (
         </section>
       ))}
 
-      <section className="solar-why" id="why-solar">
+      <section className="solar-why my-5 py-5" id="why-solar">
         <h2 style={{color: "var(--gold-accent)"}}>🌍 Why Choose NIXBEEZS Solar?</h2>
         <div style={{ height: '600px', position: 'relative' }}>
           <FlowingMenu items={whyChooseItems} />
         </div>
       </section>
 
-      <section
+      {/* <section
         className="solar-gallery"
         id="solar-gallery"
         style={{
@@ -234,7 +234,7 @@ const SolarProducts = () => (
           blurToFocus={true}
           colorShiftOnHover={true}
         />
-      </section>
+      </section> */}
     </div>
 <div style={{marginTop: '5rem'}}>
 

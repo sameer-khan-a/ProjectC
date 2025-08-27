@@ -1,10 +1,10 @@
 // pages/Home.jsx
 import React, { useEffect } from 'react';
-import Navbar from '../../components/Navbar'; // Corrected: Navbar was importing Footer
+import Navbar from '../../components/Navbar';
 import ProductOverview from './ProductOverview';
 import Footer from '../../components/Footer';
-import ProductTiers from './ProductTiers'; // Importing ProductTiers component
-import LightingProducts from './LightingProducts';
+import ProductTiers from './ProductTiers';
+import LightingProducts from './LightingProducts'; // (not yet used, but imported)
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../../main.css';
@@ -16,17 +16,36 @@ const Home = () => {
 
   return (
     <>
+      {/* Navbar */}
       <Navbar />
+
+      {/* Main Full-Width Scrollable Container */}
       <div className="home-scroll-container">
-        <section id="product">
-          <ProductOverview />
+        
+        {/* Product Overview Section */}
+        <section id="product" className="w-100">
+          <div className="container-fluid px-0">
+            <ProductOverview />
+          </div>
         </section>
-        <section id="product-tiers">
-          <ProductTiers />
+
+        {/* Product Tiers Section */}
+        <section id="product-tiers" className="py-5 w-100 bg-light">
+          <div className="container-fluid px-0">
+            <ProductTiers />
+          </div>
         </section>
-     
-        {/* Add more sections like ProductTiers, Features, etc. later */}
+
+        {/* Future Lighting Products Section */}
+        <section id="lighting-products" className="py-5 w-100">
+          <div className="container-fluid px-0">
+            {/* Placeholder - add later */}
+            {/* <LightingProducts /> */}
+          </div>
+        </section>
       </div>
+
+      {/* Footer */}
       <Footer />
     </>
   );
