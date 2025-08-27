@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../../main.css';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -43,23 +43,6 @@ const whyChooseItems = [
 ];
 
 const LightingProducts = () => {
-  const [indoorMargin, setIndoorMargin] = useState(getIndoorMargin());
-
-  // Function to calculate Indoor section margin based on screen width
-  function getIndoorMargin() {
-    const width = window.innerWidth;
-    if (width >= 1200) return '24rem'; // Large desktop
-    if (width >= 768) return '15rem';  // Tablet / medium screens
-    return '4rem';                      // Mobile
-  }
-
-  // Update margin dynamically on window resize
-  useEffect(() => {
-    const handleResize = () => setIndoorMargin(getIndoorMargin());
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <>
       <Navbar />
@@ -69,13 +52,14 @@ const LightingProducts = () => {
         id="lighting-product-overview"
         className="lighting-product-hero-container"
         style={{
-          height: '100vh',
-          width: '100vw',
+          minHeight: '100vh', // ✅ fixes mobile vh bug
+          width: '100%',
           margin: 0,
-          padding: 0,
+          padding: '0 1rem 4rem', // ✅ adds spacing below
           overflow: 'hidden',
           position: 'relative',
           backgroundColor: 'black',
+          boxSizing: 'border-box',
         }}
       >
         <style>{`
@@ -88,6 +72,7 @@ const LightingProducts = () => {
           }
         `}</style>
 
+        {/* Light Rays Overlay */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
           <LightRays
             raysOrigin="top-center"
@@ -102,6 +87,7 @@ const LightingProducts = () => {
           />
         </div>
 
+        {/* Hero Content */}
         <div
           style={{
             zIndex: 2,
@@ -139,28 +125,34 @@ const LightingProducts = () => {
 
       {/* Lighting Product Sections */}
       <div className="lighting-products-container" id="lighting-products" style={{ scrollMarginTop: '2rem' }}>
-        {lightingCategories.map(({ id, label, items }) => {
-          const marginBottom = label === 'Indoor' ? indoorMargin : '1rem';
-          return (
-            <section key={id} style={{ marginBottom }}>
-              <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>{label} Lighting</h2>
-              <div className="chroma-grid-wrapper">
-                <ChromaGrid
-                  items={items}
-                  radius={300}
-                  damping={0.45}
-                  fadeOut={0.6}
-                  ease="power3.out"
-                />
-              </div>
-            </section>
-          );
-        })}
+        {lightingCategories.map(({ id, label, items }) => (
+          <section key={id} style={{ margin: '0 auto 4rem auto', padding: '2rem 1rem', maxWidth: '1200px' }}>
+            <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>{label} Lighting</h2>
+            <div className="chroma-grid-wrapper">
+              <ChromaGrid
+                items={items}
+                radius={300}
+                damping={0.45}
+                fadeOut={0.6}
+                ease="power3.out"
+              />
+            </div>
+          </section>
+        ))}
       </div>
 
       {/* Why Nixbeezs Section */}
-      <section className="lighting-why bg-white" id="why-nixbeezs" style={{ scrollMarginTop: '2rem' }}>
-        <h2>🎯 Why Choose NIXBEEZS Lighting?</h2>
+      <section
+        className="lighting-why bg-white"
+        id="why-nixbeezs"
+        style={{
+          padding: '3rem 1rem',
+          margin: '2rem auto 4rem auto',
+          maxWidth: '1200px',
+          scrollMarginTop: '2rem',
+        }}
+      >
+        <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>🎯 Why Choose NIXBEEZS Lighting?</h2>
         <div style={{ height: '600px', position: 'relative' }}>
           <FlowingMenu items={whyChooseItems} />
         </div>

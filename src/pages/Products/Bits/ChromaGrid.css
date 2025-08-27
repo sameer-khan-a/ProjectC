@@ -16,13 +16,13 @@
   --y: 50%;
   --r: 220px;
 }
+
 /* ================= Chroma Card ================= */
 .chroma-card {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 320px;
   height: auto;
   border-radius: 20px;
   overflow: hidden;
@@ -107,98 +107,85 @@
 
 /* ================= Responsive Adjustments ================= */
 
-/* Large desktops */
-@media (min-width: 1200px) {
-  .chroma-card { max-width: 320px; }
-  .chroma-grid-wrapper img { max-width: 320px; }
+/* Base: no fixed max-width */
+.chroma-card,
+.chroma-grid-wrapper img {
+  width: 100%;
+  max-width: none; /* removes the cap */
 }
 
-/* Medium screens / tablets */
-@media (max-width: 992px) {
-  .chroma-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.2rem; padding: 0.2rem; }
-  .chroma-card { max-width: 280px; }
-  .chroma-grid-wrapper img { max-width: 280px; }
+/* Grid responsiveness */
+.chroma-grid {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
 }
 
-/* Small tablets / large phones */
-@media (max-width: 768px) {
-  .chroma-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.5rem; padding: 0.5rem; }
-  .chroma-card { max-width: 220px; }
-  .chroma-grid-wrapper img { max-width: 220px; }
-}
-
-/* Mobile phones */
+/* Small screens */
 @media (max-width: 480px) {
-  .chroma-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.4rem; padding: 0.5rem; }
-  .chroma-card { max-width: 180px; }
-  .chroma-grid-wrapper img { max-width: 180px; }
+  .chroma-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.5rem;
+  }
 }
 
-/* Extra small phones */
-@media (max-width: 360px) {
-  .chroma-grid { grid-template-columns: 1fr; gap: 0.35rem; padding: 0.5rem; }
-  .chroma-card { max-width: 160px; }
-  .chroma-grid-wrapper img { max-width: 160px; }
+/* ================= Overlay Mask ================= */
+.chroma-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  backdrop-filter: grayscale(1) brightness(0.78);
+  -webkit-backdrop-filter: grayscale(1) brightness(0.78);
+  background: rgba(0, 0, 0, 0.001);
+
+  mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+      transparent 0%,
+      transparent 15%,
+      rgba(0, 0, 0, 0.10) 30%,
+      rgba(0, 0, 0, 0.22) 45%,
+      rgba(0, 0, 0, 0.35) 60%,
+      rgba(0, 0, 0, 0.50) 75%,
+      rgba(0, 0, 0, 0.68) 88%,
+      white 100%);
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+      transparent 0%,
+      transparent 15%,
+      rgba(0, 0, 0, 0.10) 30%,
+      rgba(0, 0, 0, 0.22) 45%,
+      rgba(0, 0, 0, 0.35) 60%,
+      rgba(0, 0, 0, 0.50) 75%,
+      rgba(0, 0, 0, 0.68) 88%,
+      white 100%);
 }
 
+.chroma-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  backdrop-filter: grayscale(1) brightness(0.78);
+  -webkit-backdrop-filter: grayscale(1) brightness(0.78);
+  background: rgba(0, 0, 0, 0.001);
 
-  .chroma-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-    backdrop-filter: grayscale(1) brightness(0.78);
-    -webkit-backdrop-filter: grayscale(1) brightness(0.78);
-    background: rgba(0, 0, 0, 0.001);
-  
-    mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
-        transparent 0%,
-        transparent 15%,
-        rgba(0, 0, 0, 0.10) 30%,
-        rgba(0, 0, 0, 0.22) 45%,
-        rgba(0, 0, 0, 0.35) 60%,
-        rgba(0, 0, 0, 0.50) 75%,
-        rgba(0, 0, 0, 0.68) 88%,
-        white 100%);
-    -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
-        transparent 0%,
-        transparent 15%,
-        rgba(0, 0, 0, 0.10) 30%,
-        rgba(0, 0, 0, 0.22) 45%,
-        rgba(0, 0, 0, 0.35) 60%,
-        rgba(0, 0, 0, 0.50) 75%,
-        rgba(0, 0, 0, 0.68) 88%,
-        white 100%);
-  }
-  
-  .chroma-fade {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 4;
-    backdrop-filter: grayscale(1) brightness(0.78);
-    -webkit-backdrop-filter: grayscale(1) brightness(0.78);
-    background: rgba(0, 0, 0, 0.001);
-  
-    mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
-        white 0%,
-        white 15%,
-        rgba(255, 255, 255, 0.90) 30%,
-        rgba(255, 255, 255, 0.78) 45%,
-        rgba(255, 255, 255, 0.65) 60%,
-        rgba(255, 255, 255, 0.50) 75%,
-        rgba(255, 255, 255, 0.32) 88%,
-        transparent 100%);
-    -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
-        white 0%,
-        white 15%,
-        rgba(255, 255, 255, 0.90) 30%,
-        rgba(255, 255, 255, 0.78) 45%,
-        rgba(255, 255, 255, 0.65) 60%,
-        rgba(255, 255, 255, 0.50) 75%,
-        rgba(255, 255, 255, 0.32) 88%,
-        transparent 100%);
-  
-    opacity: 1;
-    transition: opacity 0.25s ease;
-  }
+  mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+      white 0%,
+      white 15%,
+      rgba(255, 255, 255, 0.90) 30%,
+      rgba(255, 255, 255, 0.78) 45%,
+      rgba(255, 255, 255, 0.65) 60%,
+      rgba(255, 255, 255, 0.50) 75%,
+      rgba(255, 255, 255, 0.32) 88%,
+      transparent 100%);
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+      white 0%,
+      white 15%,
+      rgba(255, 255, 255, 0.90) 30%,
+      rgba(255, 255, 255, 0.78) 45%,
+      rgba(255, 255, 255, 0.65) 60%,
+      rgba(255, 255, 255, 0.50) 75%,
+      rgba(255, 255, 255, 0.32) 88%,
+      transparent 100%);
+
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
